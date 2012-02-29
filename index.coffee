@@ -1,3 +1,4 @@
 server = require "./server"
+router = require "./router"
 
-server.start()
+server.start(router.route)
