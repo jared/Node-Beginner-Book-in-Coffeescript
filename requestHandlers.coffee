@@ -1,12 +1,14 @@
+exec = require("child_process").exec
+
 start = ->
 	console.log "Request handler 'start' was called."
-	sleep = (milliseconds) ->
-		startTime = new Date().getTime()
-		while (new Date().getTime() < (startTime + milliseconds))
-			console.log "sleeping"
+	content = "empty"
 
-	sleep 10000
-	return "Hello, start"
+	exec("ls -lah", (error, stdout, stderr) ->
+		content = stdout
+	)
+
+	return content
 
 upload = ->
 	console.log "Request handler 'upload' was called."
