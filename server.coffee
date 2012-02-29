@@ -7,11 +7,7 @@ start = (route, handle) ->
 		pathname = url.parse(request.url).pathname		
 		console.log "Request for " + pathname + " received."
 
-		content = route(handle, pathname)
-
-		response.writeHead 200, {"Content-Type": "text/plain"}
-		response.write content
-		response.end()
+		route(handle, pathname, response)
 
 	console.log "Starting server..."
 	http.createServer(onRequest).listen port
