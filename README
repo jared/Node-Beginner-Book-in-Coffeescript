@@ -1,0 +1,4 @@
+
+An attempt to learn Coffeescript by writing the Node Beginner Book exercises in .coffee format.
+
+The generated .js files have been added to .gitignore as they'll want to be generated before running.  Ideally each commit represents a stage in the development of the Node server application, so that walking through prior commits will illustrate the state of the coffeescript at each progress point.
